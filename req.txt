@@ -1,0 +1,61 @@
+😊steps to run this project 
+
+1️⃣Part: scraping static page
+1-make env :
+python -m venv env
+
+2-activate env :
+env\Scripts\activate
+
+3-install scrapy:
+pip install scrapy
+
+4-creating project:
+scrapy startproject disjoncteur
+
+5-spider file creation:
+scrapy genspider disjoncteur disjoncteur
+
+6-work to exctrate data from website:
+
+**products name: response.css('div.product-info h2.product-title a::text').get()
+**series of products:response.css('div.product-price span::text').get()
+
+7-to run code and save it in csv file for analytics after::
+scrapy crawl disjoncteur -o output.csv
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+ 2️⃣Paarte is work with dynamic website:
+
+1-active env:
+env\Scripts\activate
+
+2-install selenium :
+pip install selenium
+
+3-copy  chromedriver.exe in your project directory 
+
+4-selenuim script to excrat all link in ABB website :: in this case links are in div.product-img >a
+
+5-creating project:
+scrapy startproject dynamic
+
+6-spider file creation:
+scrapy genspider dybamic dynamic
+
+7-enbed selenium  in spider file and run it with scrapy crawl dynamic -o output.csv
+
+8-new is to make in dynamic.items:
+class DynamicItem(scrapy.Item):
+    product_name = scrapy.Field()
+    product_series = scrapy.Field()
+
+9-after put responce in other class 
+
+10-save in csv
+
+scrapy crawl elects -o ABB.csv
+
+
+
