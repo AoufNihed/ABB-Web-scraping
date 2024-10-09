@@ -11,6 +11,7 @@ This project demonstrates web scraping for both static and dynamic pages using S
 1. **Create a Virtual Environment**:
    ```bash
    python -m venv env
+
 2. env\Scripts\activate
    
 3.pip install scrapy
